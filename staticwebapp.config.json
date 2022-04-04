@@ -6,8 +6,13 @@
             "statusCode": 301
         },
         {
-            "route": "/js/old/*",
-            "redirect": "https://static.418.cloud/js/*",
+            "route": "/js/old/test.js",
+            "redirect": "https://static.418.cloud/js/test.js",
+            "statusCode": 301
+        },
+        {
+            "route": "/css/old/main.css",
+            "redirect": "https://static.418.cloud/css/main.css",
             "statusCode": 301
         }
     ]
