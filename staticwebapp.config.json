@@ -1,0 +1,9 @@
+{
+    "routes": [
+        {
+            "route": "/image",
+            "redirect": "/img",
+            "statusCode": 301
+        }
+    ]
+}
