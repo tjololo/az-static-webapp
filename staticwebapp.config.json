@@ -4,6 +4,11 @@
             "route": "/prod",
             "redirect": "https://static.418.cloud",
             "statusCode": 301
+        },
+        {
+            "route": "/js/old/test.js",
+            "redirect": "https://static.418.cloud/js/test.js",
+            "statusCode": 301
         }
     ]
 }
