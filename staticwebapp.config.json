@@ -1,8 +1,8 @@
 {
     "routes": [
         {
-            "route": "/image",
-            "redirect": "/img",
+            "route": "/prod",
+            "redirect": "https://static.418.cloud",
             "statusCode": 301
         }
     ]
