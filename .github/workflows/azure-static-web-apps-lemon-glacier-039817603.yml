@@ -31,6 +31,20 @@ jobs:
           api_location: "/api/function/" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+      - name: Upload to blob
+        id: upload
+        uses: azure/CLI@v1
+        env:
+          STORAGE_ACCOUNT: ${{ secrets.STORAGE_ACCOUNT }}
+          STORAGE_CONTAINER: prew
+          STORAGE_KEY: ${{ secrets.STORAGE_KEY }}
+        with:
+          inlineScript: |
+            mkdir /tmp/blobSource
+            cp -R ./* /tmp/blobSource/
+            cd /tmp/blobSource
+            echo "Uploading to blob"
+            az storage blob upload-batch -s . -d "${STORAGE_CONTAINER}" --account-name "${STORAGE_ACCOUNT}" --account-key "${STORAGE_KEY}" --overwrite
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
